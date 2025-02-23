@@ -1,8 +1,21 @@
 package com.example.demo.entities;
 import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+
 import java.time.LocalDate;
 
 @Entity
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+//@ToString
+@FieldDefaults(level = AccessLevel.PRIVATE)
+//@RequiredArgsConstructor
+//@EqualsAndHashCode
+@Builder
 @Table(name = "Commande")
 public class Commande {
 
@@ -22,7 +35,7 @@ public class Commande {
     private Long note;
 
 
-    public Long getIdCommande() {
+   /* public Long getIdCommande() {
         return idCommande;
     }
 
@@ -69,7 +82,7 @@ public class Commande {
     public void setNote(Long note) {
         this.note = note;
     }
-
+*/
     @ManyToOne
     private Client client;
 

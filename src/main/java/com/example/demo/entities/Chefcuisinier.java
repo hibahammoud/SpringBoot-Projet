@@ -1,9 +1,21 @@
 package com.example.demo.entities;
 import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.util.Set;
 
+
 @Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+//@ToString
+@FieldDefaults(level = AccessLevel.PRIVATE)
+//@RequiredArgsConstructor
+//@EqualsAndHashCode
+@Builder
 @Table(name = "ChefCuisinier")
 public class Chefcuisinier {
 
@@ -20,7 +32,7 @@ public class Chefcuisinier {
     private Typechef typeChef;
 
     // Getters and Setters
-    public Long getIdChefCuisinier() {
+    /*public Long getIdChefCuisinier() {
         return idChefCuisinier;
     }
 
@@ -50,7 +62,7 @@ public class Chefcuisinier {
 
     public void setTypeChef(Typechef typeChef) {
         this.typeChef = typeChef;
-    }
+    }*/
 
     @ManyToMany(mappedBy="chefcuisiniers", cascade = CascadeType.ALL)
     private Set<Menu> menus;

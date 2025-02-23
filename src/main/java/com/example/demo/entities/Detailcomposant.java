@@ -1,7 +1,19 @@
 package com.example.demo.entities;
 import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Entity
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+//@ToString
+@FieldDefaults(level = AccessLevel.PRIVATE)
+//@RequiredArgsConstructor
+//@EqualsAndHashCode
+@Builder
 @Table(name = "DetailComposant")
 public class Detailcomposant {
 
@@ -16,7 +28,7 @@ public class Detailcomposant {
     private Typecomposant typeComposant;
 
     // Getters and setters
-    public Long getIdDetailComposant() {
+    /*public Long getIdDetailComposant() {
         return idDetailComposant;
     }
 
@@ -41,7 +53,7 @@ public class Detailcomposant {
     }
 
 
-
+*/
 
 
 }

@@ -1,9 +1,22 @@
 package com.example.demo.entities;
 
 import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+
 import java.util.Set;
 
 @Entity
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+//@ToString
+@FieldDefaults(level = AccessLevel.PRIVATE)
+//@RequiredArgsConstructor
+//@EqualsAndHashCode
+@Builder
 @Table(name = "Menu")
 public class Menu {
 
@@ -20,7 +33,7 @@ public class Menu {
     private Float prixTotal;
 
     // Getters et Setters
-    public Long getIdMenu() {
+    /*public Long getIdMenu() {
         return idMenu;
     }
 
@@ -51,7 +64,7 @@ public class Menu {
     public void setPrixTotal(Float prixTotal) {
         this.prixTotal = prixTotal;
     }
-
+*/
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="menu")
     private Set<Commande> commandes;

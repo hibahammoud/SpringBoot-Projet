@@ -1,8 +1,16 @@
 package com.example.demo.repositories;
 
-import com.example.demo.entities.Commande;
+import java.time.LocalDate;
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface CommandeRepository extends CrudRepository <Commande, Long> {
+import com.example.demo.entities.Commande;
 
+@Repository
+public interface CommandeRepository extends CrudRepository<Commande, Long> {
+    List<Commande> findByClientIdClient(Long idClient);
+    List<Commande> findByClientIdClientAndDateCommandeBetween(Long idClient, LocalDate startDate, LocalDate endDate);
+    List<Commande> findByDateCommandeBetweenOrderByNoteAscPrixTotalAsc(LocalDate startDate, LocalDate endDate);
 }

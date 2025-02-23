@@ -1,10 +1,23 @@
 package com.example.demo.entities;
 
 import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+
 import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+//@ToString
+@FieldDefaults(level = AccessLevel.PRIVATE)
+//@RequiredArgsConstructor
+//@EqualsAndHashCode
+@Builder
 @Table(name = "ChaineRestauration")
 public class Chainerestauration {
 
@@ -18,7 +31,7 @@ public class Chainerestauration {
     private LocalDate dateCreation;
 
     // Getters and Setters
-    public Long getIdChaineRestauration() {
+    /*public Long getIdChaineRestauration() {
         return idChaineRestauration;
     }
 
@@ -40,7 +53,7 @@ public class Chainerestauration {
 
     public void setDateCreation(LocalDate dateCreation) {
         this.dateCreation = dateCreation;
-    }
+    }*/
     @OneToMany(cascade = CascadeType.ALL, mappedBy="chaineRestauration")
     private Set<Restaurant> restaurants;
 

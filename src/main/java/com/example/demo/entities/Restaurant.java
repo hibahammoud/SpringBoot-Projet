@@ -1,9 +1,22 @@
 package com.example.demo.entities;
 import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+
 import java.util.Set;
 
 
 @Entity
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+//@ToString
+@FieldDefaults(level = AccessLevel.PRIVATE)
+//@RequiredArgsConstructor
+//@EqualsAndHashCode
+@Builder
 @Table(name = "Restaurant")
 public class Restaurant {
 
@@ -17,7 +30,7 @@ public class Restaurant {
     private Long nbPlacesMax;
 
     // Getters et Setters
-    public Long getIdRestaurant() {
+    /*public Long getIdRestaurant() {
         return idRestaurant;
     }
 
@@ -39,12 +52,12 @@ public class Restaurant {
 
     public void setNbPlacesMax(Long nbPlacesMax) {
         this.nbPlacesMax = nbPlacesMax;
-    }
+    }*/
 
     @ManyToOne
     private Chainerestauration chaineRestauration;
 
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Menu> menus;
-    // Constructeurs, getters et setters
+
 }

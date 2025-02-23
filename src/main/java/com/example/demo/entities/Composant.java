@@ -1,8 +1,20 @@
 package com.example.demo.entities;
 import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 
 @Entity
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+//@ToString
+@FieldDefaults(level = AccessLevel.PRIVATE)
+//@RequiredArgsConstructor
+//@EqualsAndHashCode
+@Builder
 @Table(name = "Composant")
 public class Composant {
 
@@ -16,7 +28,7 @@ public class Composant {
     private Float prix;
 
     // Getters and Setters
-    public Long getIdComposant() {
+    /*public Long getIdComposant() {
         return idComposant;
     }
 
@@ -38,7 +50,7 @@ public class Composant {
 
     public void setPrix(Float prix) {
         this.prix = prix;
-    }
+    }*/
 
     @ManyToOne
     private Menu menu;
