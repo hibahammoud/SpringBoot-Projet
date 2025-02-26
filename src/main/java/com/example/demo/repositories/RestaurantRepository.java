@@ -12,6 +12,5 @@ import java.util.List;
 
 @Repository
 public interface RestaurantRepository extends CrudRepository<Restaurant, Long> {
-    @Query("SELECT r FROM Restaurant r JOIN r.chaineRestauration cr WHERE r.nbPlacesMax > :capacite AND cr.dateCreation < :dateCreation")
-    List<Restaurant> findRestaurantsByCapacityAndChainCreationDate(@Param("capacite") Long capacite, @Param("dateCreation") LocalDate dateCreation);
+    List<Restaurant> findByNbPlacesMaxGreaterThanAndChainerestaurationDateCreationBefore(Integer capacite, LocalDate date);
 }

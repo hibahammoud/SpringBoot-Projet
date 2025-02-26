@@ -16,8 +16,7 @@ import java.util.List;
 public interface MenuRepository extends CrudRepository<Menu, Long> {
 
     // Requête 1 : Trouver les menus par type de menu et dont la somme des prix des composants est supérieure à un montant donné
-    @Query("SELECT m FROM Menu m JOIN m.composants c WHERE m.typeMenu = :typeMenu GROUP BY m.idMenu HAVING SUM(c.prix) > :montant")
-    List<Menu> findMenusByTypeMenuAndTotalComposantPriceGreaterThan(@Param("typeMenu") Typemenu typeMenu, @Param("montant") Float montant);
+    List<Menu> findByTypeMenuAndPrixTotalGreaterThan(Typemenu typeMenu, Float prix);
 
     // Requête 2 : Trouver les noms des menus par type de menu, ordonnés par prix total
     @Query("SELECT m.libelleMenu FROM Menu m WHERE m.typeMenu = :typeMenu ORDER BY m.prixTotal")

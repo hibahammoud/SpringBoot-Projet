@@ -3,9 +3,12 @@ package com.example.demo.services;
 import com.example.demo.entities.Chefcuisinier;
 import com.example.demo.entities.Client;
 import com.example.demo.repositories.ChefcuisinierRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
+@AllArgsConstructor
 public class ChefcuisinierService implements IChefcuisinierService{
 
 

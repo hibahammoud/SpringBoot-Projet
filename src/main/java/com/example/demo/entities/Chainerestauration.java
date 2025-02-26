@@ -3,15 +3,17 @@ package com.example.demo.entities;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.springframework.stereotype.Controller;
 
 import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
-
+//@Controller
+@AllArgsConstructor
 @Getter
 @Setter
-@AllArgsConstructor
+//@AllArgsConstructor
 @NoArgsConstructor
 //@ToString
 @FieldDefaults(level = AccessLevel.PRIVATE)

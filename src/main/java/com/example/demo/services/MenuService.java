@@ -3,9 +3,12 @@ package com.example.demo.services;
 import com.example.demo.entities.Client;
 import com.example.demo.entities.Menu;
 import com.example.demo.repositories.MenuRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
+@AllArgsConstructor
 public class MenuService implements IMenuService{
     MenuRepository menuRepository ;
     @Override
@@ -38,3 +41,4 @@ public class MenuService implements IMenuService{
         return (List<Menu>) menuRepository.saveAll(Menus);
     }
 }
+//declarer menu repository mrnu rep

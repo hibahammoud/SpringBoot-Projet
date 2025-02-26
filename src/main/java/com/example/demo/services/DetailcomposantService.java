@@ -3,9 +3,12 @@ package com.example.demo.services;
 
 import com.example.demo.entities.Detailcomposant;
 import com.example.demo.repositories.DetailcomposantRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
+@AllArgsConstructor
 public class DetailcomposantService implements IDetailcomposantService{
     DetailcomposantRepository detailcomposantRepository ;
     @Override

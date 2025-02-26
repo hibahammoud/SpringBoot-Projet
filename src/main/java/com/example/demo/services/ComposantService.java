@@ -3,9 +3,12 @@ package com.example.demo.services;
 
 import com.example.demo.entities.Composant;
 import com.example.demo.repositories.ComposantRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
+@AllArgsConstructor
 public class ComposantService implements IComposantService{
     ComposantRepository composantRepository ;
     @Override

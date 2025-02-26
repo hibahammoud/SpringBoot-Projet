@@ -2,9 +2,12 @@ package com.example.demo.services;
 
 import com.example.demo.entities.Chainerestauration;
 import com.example.demo.repositories.ChainerestaurationReository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
+@AllArgsConstructor
 public class ChainerestaurationService implements IChainerestaurationService{
 
     ChainerestaurationReository chainerestaurationReository ;
