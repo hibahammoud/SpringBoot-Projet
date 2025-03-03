@@ -23,7 +23,7 @@ public interface MenuRepository extends CrudRepository<Menu, Long> {
     List<String> findMenuNamesByTypeMenuOrderByPrixTotal(@Param("typeMenu") Typemenu typeMenu);
 
     // Requête 3 : Trouver les menus par type de composant
-    @Query("SELECT c FROM Composant c WHERE c.menu.idMenu = :menuId AND c.detailComposant = :detailComposant")
-
+    @Query("SELECT c FROM Composant c WHERE c.menu.idMenu = :menuId AND c.detailComposant.typeComposant = :typeComposant")
     List<Composant> findComposantsByMenuAndType(@Param("menuId") Long menuId, @Param("typeComposant") Typecomposant typeComposant);
+
 }

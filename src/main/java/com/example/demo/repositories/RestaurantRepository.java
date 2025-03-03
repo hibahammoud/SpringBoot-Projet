@@ -12,5 +12,5 @@ import java.util.List;
 
 @Repository
 public interface RestaurantRepository extends CrudRepository<Restaurant, Long> {
-    List<Restaurant> findByNbPlacesMaxGreaterThanAndChainerestaurationDateCreationBefore(Integer capacite, LocalDate date);
+    List<Restaurant> findByNbPlacesMaxGreaterThanAndChaineRestauration_DateCreationBefore(Integer nbPlaces, LocalDate date);
 }

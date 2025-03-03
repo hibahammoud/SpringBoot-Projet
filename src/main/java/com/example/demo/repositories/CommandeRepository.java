@@ -12,5 +12,5 @@ import com.example.demo.entities.Commande;
 public interface CommandeRepository extends CrudRepository<Commande, Long> {
     List<Commande> findByClientIdClient(Long idClient);
     List<Commande> findByClientIdClientAndDateCommandeBetween(Long idClient, LocalDate startDate, LocalDate endDate);
-    List<Commande> findByDateCommandeBetweenOrderByNoteAscPrixTotalAsc(LocalDate startDate, LocalDate endDate);
+    List<Commande> findByDateCommandeBetweenOrderByNoteAscTotalCommandeAsc(LocalDate startDate, LocalDate endDate);
 }
